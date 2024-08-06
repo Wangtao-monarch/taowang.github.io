@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Tao Wang</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <header>
@@ -12,7 +14,7 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="research.html">Research</a></li>
                 <li><a href="publications.html">Publications</a></li>
                 <li><a href="projects.html">Projects</a></li>
@@ -23,11 +25,15 @@
     <main>
         <section id="intro">
             <h2>Welcome</h2>
-            <p>Hello! I am Tao Wang, a PhD student in [Your Field] at [Your University]. My research focuses on [Your Research Interests].</p>
+            <div class="scrolling-intro">
+                <p>Hello! I am Tao Wang, a PhD student in Computer Science at University of Idaho. My research mainly focuses on NLP.</p>
+            </div>
         </section>
-        <div id="danmu-container">
-            <!-- 弹幕将会显示在这里 -->
-        </div>
+        <section id="visitor-stats">
+            <h2>Visitor Stats</h2>
+            <p>Visitor Count: <span id="visitorCount">Loading...</span></p>
+            <canvas id="visitorMap" width="400" height="200"></canvas>
+        </section>
     </main>
     <footer>
         <p>&copy; 2024 Tao Wang. All rights reserved.</p>
