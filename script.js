@@ -1,24 +1,36 @@
-document.addEventListener('DOMContentLoaded', function() {
-    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
-        startDanmu();
-    }
-});
+// Google Analytics tracking is already included in the HTML
 
-function startDanmu() {
-    const danmuContainer = document.getElementById('danmu-container');
-    const messages = [
-        "Welcome to my website!",
-        "Check out my latest blog post!",
-        "My research focuses on AI and machine learning.",
-        "Contact me for collaborations.",
-        "Stay tuned for more updates!"
-    ];
+// Example function to load visitor data (assuming you have a service to provide this data)
+function loadVisitorData() {
+    axios.get('visitorData.json')
+        .then(response => {
+            const data = response.data;
+            document.getElementById('visitorCount').textContent = data.visitorCount;
 
-    messages.forEach((message, index) => {
-        const danmu = document.createElement('div');
-        danmu.classList.add('danmu');
-        danmu.textContent = message;
-        danmu.style.top = `${index * 20}px`; // 让每条弹幕显示在不同的高度
-        danmuContainer.appendChild(danmu);
-    });
+            const ctx = document.getElementById('visitorMap').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: data.countries,
+                    datasets: [{
+                        label: 'Visitors by Country',
+                        data: data.visitorCounts,
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        })
+        .catch(error => console.error('Error loading visitor data:', error));
 }
+
+// Call the function to load visitor data on page load
+window.onload = loadVisitorData;
