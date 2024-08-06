@@ -1,31 +1,24 @@
-function changeMessage() {
-    const message = document.getElementById('welcomeMessage');
-    message.textContent = 'Welcome to my dynamic website!';
-}
-
-// 加载 research.html 时的动态内容
 document.addEventListener('DOMContentLoaded', function() {
-    if (window.location.pathname.endsWith('research.html')) {
-        loadResearchContent();
+    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
+        startDanmu();
     }
 });
 
-function loadResearchContent() {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'research-data.json', true);
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            const researchData = JSON.parse(xhr.responseText);
-            const researchContent = document.getElementById('researchContent');
-            let html = '';
-            researchData.forEach(item => {
-                html += `<h3>${item.title}</h3><p>${item.description}</p>`;
-            });
-            researchContent.innerHTML = html;
-        } else {
-            document.getElementById('researchContent').textContent = 'Failed to load research content.';
-        }
-    };
-    xhr.send();
-}
+function startDanmu() {
+    const danmuContainer = document.getElementById('danmu-container');
+    const messages = [
+        "Welcome to my website!",
+        "Check out my latest blog post!",
+        "My research focuses on AI and machine learning.",
+        "Contact me for collaborations.",
+        "Stay tuned for more updates!"
+    ];
 
+    messages.forEach((message, index) => {
+        const danmu = document.createElement('div');
+        danmu.classList.add('danmu');
+        danmu.textContent = message;
+        danmu.style.top = `${index * 20}px`; // 让每条弹幕显示在不同的高度
+        danmuContainer.appendChild(danmu);
+    });
+}
