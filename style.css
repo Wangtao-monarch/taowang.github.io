@@ -93,14 +93,16 @@ img {
     margin-bottom: 15px;
 }
 
-/* Photo Wall Styling */
+/* Photo Wall Styling with Scroll */
 .photo-wall {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Default three columns */
     gap: 10px;
     width: 100vw; /* Full viewport width */
+    max-height: 600px; /* Limit the height of the photo wall */
     margin: 0; /* Remove outer margin */
     padding: 20px;
+    overflow-y: auto; /* Enable vertical scrolling */
     grid-auto-rows: 300px; /* Fixed row height */
 }
 
