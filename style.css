@@ -10,6 +10,7 @@ body {
     color: #333;
     background-color: transparent; /* Transparent background */
     padding-top: 50px;
+    margin: 0; /* Remove any default margin */
 }
 
 /* Navbar */
@@ -97,7 +98,7 @@ img {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Default three columns */
     gap: 10px;
-    width: 100%; /* Full width of the page */
+    width: 100vw; /* Full viewport width */
     margin: 0; /* Remove outer margin */
     padding: 20px;
 }
