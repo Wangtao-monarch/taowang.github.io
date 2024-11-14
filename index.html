@@ -81,6 +81,34 @@
             opacity: 0.9;
         }
 
+        /* 弹幕区域 */
+        .marquee {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+            box-sizing: border-box;
+            margin-top: 30px;
+        }
+
+        /* 弹幕内容 */
+        .marquee-text {
+            display: inline-block;
+            font-size: 1.1em;
+            color: #333;
+            animation: scroll 30s linear infinite; /* 将持续时间增加到 30s，使滚动变慢 */
+            white-space: nowrap;
+            padding-left: 100%; /* 从右侧开始 */
+        }
+
+        /* 滚动动画 */
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
         .content .chat-button {
             margin-top: 30px;
             font-size: 1em;
@@ -119,6 +147,9 @@
         <div class="content">
             <h1>Find your happiness<br>and learn to put it first.</h1>
             <p>Chat with me</p>
+            <div class="marquee">
+                <span class="marquee-text">💻 Software Developer | 🎓 PhD Student | 📍 Based in [Location] | Passionate about AI and Optimization 🚀</span>
+            </div>
             <button class="chat-button">Chat with me</button>
         </div>
     </div>
