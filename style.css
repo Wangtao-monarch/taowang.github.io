@@ -95,7 +95,7 @@ img {
 /* Photo Wall Styling */
 .photo-wall {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* 每行三列 */
     gap: 10px;
     max-width: 1200px;
     margin: 20px auto;
