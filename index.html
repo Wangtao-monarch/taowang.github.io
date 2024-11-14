@@ -3,80 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Page</title>
+    <title>Personal Page</title>
     <style>
-        /* 页面布局和背景颜色 */
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        /* 页面整体样式 */
+        * {
             margin: 0;
-            background-color: #e6f0ff; /* 淡蓝色背景 */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        /* 容器样式 */
-        .container {
-            text-align: center;
-            padding: 40px;
-            border-radius: 12px;
-            background-color: #ffffff;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-            max-width: 600px;
-            width: 90%;
-        }
-
-        /* 标题样式 */
-        h1 {
-            font-size: 2.5em;
-            color: #333;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        /* 子标题样式 */
-        p {
-            font-size: 1.2em;
-            color: #666;
-            margin: 10px 0 20px;
-        }
-
-        /* 弹幕区域 */
-        .marquee {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            border-top: 1px solid #ddd;
-            border-bottom: 1px solid #ddd;
-            padding: 10px 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
-        /* 弹幕内容 */
-        .marquee-text {
-            display: inline-block;
-            font-size: 1.1em;
-            color: #333;
-            animation: scroll 10s linear infinite;
-            white-space: nowrap;
-            padding-left: 100%; /* 从右侧开始 */
+        body, html {
+            height: 100%;
+            font-family: 'Arial', sans-serif;
         }
 
-        /* 滚动动画 */
-        @keyframes scroll {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+        /* 背景图片和内容容器 */
+        .background {
+            background-image: url('https://source.unsplash.com/1600x900/?nature,relax'); /* 背景图片 URL，可替换 */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        /* 顶部导航栏 */
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.3); /* 半透明黑色背景 */
+        }
+
+        .navbar a {
+            color: #ffffff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        .navbar .button {
+            background-color: #b0a1ba;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .navbar .button:hover {
+            background-color: #9a8a9f;
+        }
+
+        /* 主要标题 */
+        .content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .content h1 {
+            font-size: 3em;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            margin-top: 20px;
+            opacity: 0.9;
+        }
+
+        .content .chat-button {
+            margin-top: 30px;
+            font-size: 1em;
+            padding: 10px 20px;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            background: transparent;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .content .chat-button:hover {
+            background: #ffffff;
+            color: #333;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to My Page</h1>
-        <p>Hi there! I'm [Your Name].</p>
-        <div class="marquee">
-            <span class="marquee-text">💻 Software Developer | 🎓 PhD Student | 📍 Based in [Location] | Passionate about AI and Optimization 🚀</span>
+
+    <!-- 背景图片和主要内容 -->
+    <div class="background">
+        <!-- 顶部导航栏 -->
+        <div class="navbar">
+            <div class="logo">Almar</div>
+            <div>
+                <a href="#">You</a>
+                <a href="#">Blog</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#" class="button">Get Started</a>
+            </div>
+        </div>
+
+        <!-- 内容区 -->
+        <div class="content">
+            <h1>Find your happiness<br>and learn to put it first.</h1>
+            <p>Chat with me</p>
+            <button class="chat-button">Chat with me</button>
         </div>
     </div>
+
 </body>
 </html>
