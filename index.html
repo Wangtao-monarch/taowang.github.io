@@ -3,155 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Page</title>
+    <title>PhD Website Template</title>
     <style>
-        /* 页面整体样式 */
+        /* Basic Reset and Font Styling */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        body, html {
-            height: 100%;
-            font-family: 'Arial', sans-serif;
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f9;
+            padding-top: 50px;
         }
-
-        /* 背景图片和内容容器 */
-        .background {
-            background-image: url('https://source.unsplash.com/1600x900/?nature,relax'); /* 背景图片 URL，可替换 */
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #ffffff;
-        }
-
-        /* 顶部导航栏 */
+        /* Navbar */
         .navbar {
-            position: absolute;
+            position: fixed;
             top: 0;
             width: 100%;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.3); /* 半透明黑色背景 */
-        }
-
-        .navbar a {
-            color: #ffffff;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 1em;
-        }
-
-        .navbar .button {
-            background-color: #b0a1ba;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .navbar .button:hover {
-            background-color: #9a8a9f;
-        }
-
-        /* 主要标题 */
-        .content {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .content h1 {
-            font-size: 3em;
-            line-height: 1.2;
-            font-weight: 700;
-        }
-
-        .content p {
-            font-size: 1.2em;
-            margin-top: 20px;
-            opacity: 0.9;
-        }
-
-        /* 弹幕区域 */
-        .marquee {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            border-top: 1px solid #ddd;
-            border-bottom: 1px solid #ddd;
+            background-color: #333;
+            color: #fff;
             padding: 10px 0;
-            box-sizing: border-box;
-            margin-top: 30px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-
-        /* 弹幕内容 */
-        .marquee-text {
-            display: inline-block;
-            font-size: 1.1em;
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        .navbar a:hover {
+            color: #ddd;
+        }
+        /* Container for Sections */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* Section Styling */
+        section {
+            padding: 30px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        h2 {
             color: #333;
-            animation: scroll 30s linear infinite; /* 将持续时间增加到 30s，使滚动变慢 */
-            white-space: nowrap;
-            padding-left: 100%; /* 从右侧开始 */
+            margin-bottom: 15px;
         }
-
-        /* 滚动动画 */
-        @keyframes scroll {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-
-        .content .chat-button {
-            margin-top: 30px;
-            font-size: 1em;
-            padding: 10px 20px;
-            border: 2px solid #ffffff;
+        /* Contact Form Styling */
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
             border-radius: 5px;
-            background: transparent;
-            color: #ffffff;
-            cursor: pointer;
-            transition: background 0.3s, color 0.3s;
         }
-
-        .content .chat-button:hover {
-            background: #ffffff;
-            color: #333;
+        form button {
+            background-color: #333;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+        }
+        form button:hover {
+            background-color: #555;
+        }
+        /* Link Styling */
+        .links a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .links a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <!-- 背景图片和主要内容 -->
-    <div class="background">
-        <!-- 顶部导航栏 -->
-        <div class="navbar">
-            <div class="logo">Almar</div>
-            <div>
-                <a href="#">You</a>
-                <a href="#">Blog</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
-                <a href="#" class="button">Get Started</a>
-            </div>
-        </div>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#publications">Publications</a>
+        <a href="#research">Research</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#speaking">Speaking</a>
+        <a href="#cv">CV</a>
+        <a href="#links">Links</a>
+        <a href="#blog">Blog</a>
+    </div>
 
-        <!-- 内容区 -->
-        <div class="content">
-            <h1>Find your happiness<br>and learn to put it first.</h1>
-            <p>Chat with me</p>
-            <div class="marquee">
-                <span class="marquee-text">💻 Software Developer | 🎓 PhD Student | 📍 Based in [Location] | Passionate about AI and Optimization 🚀</span>
+    <!-- Main Content Container -->
+    <div class="container">
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <img src="your-headshot.jpg" alt="Your Headshot" style="width:150px; border-radius: 50%; margin-bottom: 15px;">
+            <p>Brief bio about yourself. Describe your academic background, current research interests, and any other relevant personal information.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>You can reach me at <a href="mailto:your-email@example.com">your-email@example.com</a> or through my social media profiles below:</p>
+            <form>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications">
+            <h2>Publications</h2>
+            <p>List of publications with abstracts or descriptions. Include links to full text if available.</p>
+            <!-- Example publication entry -->
+            <div>
+                <h3>Title of Publication</h3>
+                <p><em>Journal Name, Year</em></p>
+                <p>Brief abstract or description of this publication.</p>
+                <a href="#">Read more</a>
             </div>
-            <button class="chat-button">Chat with me</button>
-        </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research">
+            <h2>Research</h2>
+            <p>Information about your current research project, including goals, outcomes, and any publications or results.</p>
+        </section>
+
+        <!-- Teaching Section -->
+        <section id="teaching">
+            <h2>Teaching</h2>
+            <p>Description of your teaching experience, including course descriptions, syllabi, and your teaching philosophy.</p>
+        </section>
+
+        <!-- Speaking Engagements Section -->
+        <section id="speaking">
+            <h2>Speaking Engagements</h2>
+            <p>List of speaking engagements, conferences, or workshops where you’ve presented.</p>
+        </section>
+
+        <!-- CV Section -->
+        <section id="cv">
+            <h2>Digital CV</h2>
+            <p>Download my full CV:</p>
+            <a href="your-cv.pdf" download>Download PDF</a>
+        </section>
+
+        <!-- Links Section -->
+        <section id="links">
+            <h2>Links to Other Sites</h2>
+            <p>Connect with me on other platforms:</p>
+            <div class="links">
+                <a href="https://linkedin.com/in/yourprofile">LinkedIn</a> |
+                <a href="https://github.com/yourprofile">GitHub</a> |
+                <a href="https://scholar.google.com/citations?user=yourprofile">Google Scholar</a>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog">
+            <h2>Blog</h2>
+            <p>Latest articles from my blog. Connect with Medium or another blogging platform if desired.</p>
+        </section>
+
     </div>
 
 </body>
