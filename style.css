@@ -103,11 +103,11 @@ img {
     padding: 20px;
 }
 
-/* Photo Styling with Uniform Size */
+/* Photo Styling with Fixed Size */
 .photo {
     width: 100%; /* Full width of grid column */
+    height: 300px; /* Fixed height */
     overflow: hidden;
-    aspect-ratio: 1 / 1; /* Maintain square ratio */
 }
 
 .photo img {
