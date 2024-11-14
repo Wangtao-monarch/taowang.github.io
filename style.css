@@ -33,6 +33,13 @@ body {
     color: #ddd;
 }
 
+/* Icon Styling */
+.navbar i {
+    margin-right: 8px;
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+
 /* Container for Sections */
 .container {
     max-width: 800px;
