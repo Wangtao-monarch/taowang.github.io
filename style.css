@@ -103,10 +103,16 @@ img {
     padding: 20px;
 }
 
-/* Photo Styling */
+/* Photo Styling with Uniform Size */
+.photo {
+    width: 100%; /* Full width of grid column */
+    overflow: hidden;
+    aspect-ratio: 1 / 1; /* Maintain square ratio */
+}
+
 .photo img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
