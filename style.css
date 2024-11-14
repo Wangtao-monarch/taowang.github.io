@@ -101,12 +101,13 @@ img {
     width: 100vw; /* Full viewport width */
     margin: 0; /* Remove outer margin */
     padding: 20px;
+    grid-auto-rows: 300px; /* Fixed row height */
 }
 
-/* Photo Styling with Fixed Size */
+/* Photo Styling with Uniform Size */
 .photo {
     width: 100%; /* Full width of grid column */
-    height: 300px; /* Fixed height for each photo */
+    height: 100%; /* Full height of grid row */
     overflow: hidden;
 }
 
