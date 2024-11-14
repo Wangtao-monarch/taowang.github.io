@@ -34,7 +34,34 @@
         <div class="photo"><img src="home10.jpeg" alt="Photo 10"></div>
         <div class="photo"><img src="home11.jpeg" alt="Photo 11"></div>
         <div class="photo"><img src="home12.jpeg" alt="Photo 12"></div>
-
     </div>
+
+    <script>
+        const photoWall = document.querySelector('.photo-wall');
+
+        function startAutoScroll() {
+            let scrollAmount = 0;
+            const scrollStep = 1; // Adjust speed
+            const maxScroll = photoWall.scrollWidth - photoWall.clientWidth;
+
+            function scrollPhotos() {
+                if (scrollAmount >= maxScroll) {
+                    scrollAmount = 0; // Reset scroll to the beginning
+                } else {
+                    scrollAmount += scrollStep;
+                }
+                photoWall.scrollTo({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+                requestAnimationFrame(scrollPhotos);
+            }
+            scrollPhotos();
+        }
+
+        // Start the auto-scroll when the page loads
+        window.onload = startAutoScroll;
+    </script>
+
 </body>
 </html>
