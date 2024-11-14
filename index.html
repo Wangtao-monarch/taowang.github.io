@@ -3,50 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PhD Student Blog</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>My Personal Page</title>
+    <style>
+        /* 页面布局和背景颜色 */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #e6f0ff; /* 淡蓝色背景 */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* 容器样式 */
+        .container {
+            text-align: center;
+            padding: 40px;
+            border-radius: 12px;
+            background-color: #ffffff;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 90%;
+        }
+
+        /* 标题样式 */
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* 子标题样式 */
+        p {
+            font-size: 1.2em;
+            color: #666;
+            margin: 10px 0 20px;
+        }
+
+        /* 弹幕区域 */
+        .marquee {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+            box-sizing: border-box;
+        }
+
+        /* 弹幕内容 */
+        .marquee-text {
+            display: inline-block;
+            font-size: 1.1em;
+            color: #333;
+            animation: scroll 10s linear infinite;
+            white-space: nowrap;
+            padding-left: 100%; /* 从右侧开始 */
+        }
+
+        /* 滚动动画 */
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Tao Wang</h1>
-            <p>PhD Student in Computer Science</p>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+    <div class="container">
+        <h1>Welcome to My Page</h1>
+        <p>Hi there! I'm [Your Name].</p>
+        <div class="marquee">
+            <span class="marquee-text">💻 Software Developer | 🎓 PhD Student | 📍 Based in [Location] | Passionate about AI and Optimization 🚀</span>
         </div>
-    </header>
-
-    <main>
-        <section id="about" class="container">
-            <h2>About Me</h2>
-            <p>Hello! I'm Tao Wang, a PhD student in Computer Science at University of Idaho. My research focuses on artificial intelligence and machine learning.</p>
-        </section>
-
-        <section id="research" class="container">
-            <h2>Research Interests</h2>
-            <ul>
-                <li>Artificial Intelligence</li>
-                <li>Machine Learning</li>
-                <li>Natural Language Processing</li>
-                <li>Computer Vision</li>
-            </ul>
-        </section>
-
-        <section id="contact" class="container">
-            <h2>Contact</h2>
-            <p>You can reach me via email at <a href="wang0080@vandals.uidaho.edu@example.com">wang0080@vandals.uidaho.edu</a>.</p>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Tao Wang. All rights reserved.</p>
-        </div>
-    </footer>
+    </div>
 </body>
 </html>
