@@ -11,7 +11,7 @@ body {
     color: #333;
     background-color: #f9f9f9;
     padding-top: 50px;
-    overflow-y: auto; /* Allow scrolling if content overflows */
+    overflow-y: auto;
 }
 
 .navbar {
@@ -53,7 +53,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: movePhoto 10s infinite; /* Apply animation to each photo */
+    animation: movePhoto 8s ease-in-out infinite; /* Apply animation to each photo */
 }
 
 /* Apply different delays to each photo to create staggered effect */
@@ -80,19 +80,17 @@ body {
 @keyframes movePhoto {
     0% {
         transform: translate(0, 0) scale(1);
-        opacity: 1;
     }
     25% {
-        transform: translate(10px, -10px) scale(1.05); /* Move up-right */
+        transform: translate(5px, -5px) scale(1.05); /* Slight move up-right and scale up */
     }
     50% {
-        transform: translate(-10px, 10px) scale(1); /* Move down-left */
+        transform: translate(-5px, 5px) scale(1); /* Move down-left and scale back */
     }
     75% {
-        transform: translate(10px, 10px) scale(1.05); /* Move down-right */
+        transform: translate(5px, 5px) scale(1.05); /* Move down-right and scale up */
     }
     100% {
-        transform: translate(0, 0) scale(1);
-        opacity: 1;
+        transform: translate(0, 0) scale(1); /* Return to original */
     }
 }
