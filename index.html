@@ -22,6 +22,21 @@
     </div>
 
     <div class="photo-wall">
+        <!-- Duplicate the photo elements to create a seamless scrolling effect -->
+        <div class="photo"><img src="home1.png" alt="Photo 1"></div>
+        <div class="photo"><img src="home2.png" alt="Photo 2"></div>
+        <div class="photo"><img src="home3.jpeg" alt="Photo 3"></div>
+        <div class="photo"><img src="home4.jpeg" alt="Photo 4"></div>
+        <div class="photo"><img src="home5.jpeg" alt="Photo 5"></div>
+        <div class="photo"><img src="home6.jpeg" alt="Photo 6"></div>
+        <div class="photo"><img src="home7.jpeg" alt="Photo 7"></div>
+        <div class="photo"><img src="home8.jpeg" alt="Photo 8"></div>
+        <div class="photo"><img src="home9.jpeg" alt="Photo 9"></div>
+        <div class="photo"><img src="home10.jpeg" alt="Photo 10"></div>
+        <div class="photo"><img src="home11.jpeg" alt="Photo 11"></div>
+        <div class="photo"><img src="home12.jpeg" alt="Photo 12"></div>
+        
+        <!-- Duplicate for continuous scroll -->
         <div class="photo"><img src="home1.png" alt="Photo 1"></div>
         <div class="photo"><img src="home2.png" alt="Photo 2"></div>
         <div class="photo"><img src="home3.jpeg" alt="Photo 3"></div>
@@ -35,33 +50,5 @@
         <div class="photo"><img src="home11.jpeg" alt="Photo 11"></div>
         <div class="photo"><img src="home12.jpeg" alt="Photo 12"></div>
     </div>
-
-    <script>
-        const photoWall = document.querySelector('.photo-wall');
-
-        function startAutoScroll() {
-            let scrollAmount = 0;
-            const scrollStep = 1; // Adjust speed
-            const maxScroll = photoWall.scrollWidth - photoWall.clientWidth;
-
-            function scrollPhotos() {
-                if (scrollAmount >= maxScroll) {
-                    scrollAmount = 0; // Reset scroll to the beginning
-                } else {
-                    scrollAmount += scrollStep;
-                }
-                photoWall.scrollTo({
-                    left: scrollAmount,
-                    behavior: 'smooth'
-                });
-                requestAnimationFrame(scrollPhotos);
-            }
-            scrollPhotos();
-        }
-
-        // Start the auto-scroll when the page loads
-        window.onload = startAutoScroll;
-    </script>
-
 </body>
 </html>
