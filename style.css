@@ -37,56 +37,26 @@ body {
 
 /* Photo Wall Styling */
 .photo-wall {
-    position: absolute;
-    top: 50px; /* 避开导航栏 */
-    width: 100vw;
-    height: calc(100vh - 50px); /* 减去导航栏的高度 */
-    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 自动适应列数 */
+    gap: 10px;
+    padding: 60px 10px 10px; /* 顶部留出导航栏空间 */
 }
 
 .photo {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
-    animation: fadeZoom 72s infinite;
-    z-index: 1;
+    overflow: hidden;
+    position: relative;
 }
-
-.photo:nth-child(1) { animation-delay: 0s; }
-.photo:nth-child(2) { animation-delay: 6s; }
-.photo:nth-child(3) { animation-delay: 12s; }
-.photo:nth-child(4) { animation-delay: 18s; }
-.photo:nth-child(5) { animation-delay: 24s; }
-.photo:nth-child(6) { animation-delay: 30s; }
-.photo:nth-child(7) { animation-delay: 36s; }
-.photo:nth-child(8) { animation-delay: 42s; }
-.photo:nth-child(9) { animation-delay: 48s; }
-.photo:nth-child(10) { animation-delay: 54s; }
-.photo:nth-child(11) { animation-delay: 60s; }
-.photo:nth-child(12) { animation-delay: 66s; }
 
 .photo img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    transform: scale(1);
-    transition: transform 1s ease-in-out;
+    object-fit: cover; /* 确保图片不拉伸 */
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Fade-in and fade-out animation */
-@keyframes fadeZoom {
-    0%, 8.33% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    4% {
-        transform: scale(1.05);
-    }
-    11%, 100% {
-        opacity: 0;
-        transform: scale(1);
-    }
+.photo img:hover {
+    transform: scale(1.05); /* 放大效果 */
 }
