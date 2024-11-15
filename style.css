@@ -82,6 +82,6 @@ body {
         transform: scale(1);
     }
     50% {
-        transform: scale(1.05); /* Slight zoom in at midpoint */
+        transform: scale(1.30); /* Slight zoom in at midpoint */
     }
 }
