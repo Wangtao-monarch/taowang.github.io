@@ -49,7 +49,7 @@ body {
     width: 100%;
     height: 100%;
     opacity: 0;
-    animation: fade 72s infinite;
+    animation: fadeZoom 72s infinite;
 }
 
 .photo:nth-child(1) { animation-delay: 0s; }
@@ -69,10 +69,21 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain; /* 保持原比例显示，不裁剪或拉伸 */
+    transform: scale(1); /* 初始缩放比例 */
+    transition: transform 1s ease-in-out;
 }
 
-/* Fade-in and fade-out animation */
-@keyframes fade {
-    0%, 8.33% { opacity: 1; }
-    11%, 100% { opacity: 0; }
+/* 淡入淡出并缩放动画 */
+@keyframes fadeZoom {
+    0%, 8.33% {
+        opacity: 1;
+        transform: scale(1); /* 显示时的初始比例 */
+    }
+    4% {
+        transform: scale(1.05); /* 放大效果 */
+    }
+    11%, 100% {
+        opacity: 0;
+        transform: scale(1); /* 返回初始比例 */
+    }
 }
