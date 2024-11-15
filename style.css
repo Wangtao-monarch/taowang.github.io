@@ -49,7 +49,7 @@ body {
     width: 100%;
     height: 100%;
     opacity: 0;
-    animation: fade 36s infinite;
+    animation: fade 72s infinite;
 }
 
 .photo:nth-child(1) { animation-delay: 0s; }
@@ -58,6 +58,12 @@ body {
 .photo:nth-child(4) { animation-delay: 18s; }
 .photo:nth-child(5) { animation-delay: 24s; }
 .photo:nth-child(6) { animation-delay: 30s; }
+.photo:nth-child(7) { animation-delay: 36s; }
+.photo:nth-child(8) { animation-delay: 42s; }
+.photo:nth-child(9) { animation-delay: 48s; }
+.photo:nth-child(10) { animation-delay: 54s; }
+.photo:nth-child(11) { animation-delay: 60s; }
+.photo:nth-child(12) { animation-delay: 66s; }
 
 .photo img {
     width: 100%;
@@ -67,6 +73,6 @@ body {
 
 /* Fade-in and fade-out animation */
 @keyframes fade {
-    0%, 17% { opacity: 1; }
-    20%, 100% { opacity: 0; }
+    0%, 8.33% { opacity: 1; }
+    11%, 100% { opacity: 0; }
 }
