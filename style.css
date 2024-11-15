@@ -37,13 +37,16 @@ body {
     overflow: hidden;
     width: 100vw;
     height: 100vh;
-    animation: scrollPhotos 36s linear infinite; /* 设置总的滚动时间和循环 */
 }
 
-.photo {
-    min-width: 100vw; /* 每次显示一张图片，宽度等于视口宽度 */
+.photo-wall .photo {
+    min-width: 100vw; /* 每次显示一张图片的宽度 */
     height: 100vh;
-    flex-shrink: 0; /* 保证每个图片不会缩小 */
+    transition: transform 1s ease; /* 切换效果 */
+}
+
+.photo-wall {
+    animation: scrollPhotos 36s infinite linear;
 }
 
 .photo img {
@@ -52,19 +55,13 @@ body {
     object-fit: cover;
 }
 
-/* 定义滚动动画 */
+/* Animation to move photos */
 @keyframes scrollPhotos {
     0% { transform: translateX(0); }
-    8.33% { transform: translateX(-100%); }
-    16.66% { transform: translateX(-200%); }
-    25% { transform: translateX(-300%); }
-    33.33% { transform: translateX(-400%); }
-    41.66% { transform: translateX(-500%); }
-    50% { transform: translateX(-600%); }
-    58.33% { transform: translateX(-700%); }
-    66.66% { transform: translateX(-800%); }
-    75% { transform: translateX(-900%); }
-    83.33% { transform: translateX(-1000%); }
-    91.66% { transform: translateX(-1100%); }
-    100% { transform: translateX(-1200%); }
+    16.66% { transform: translateX(-100vw); }
+    33.32% { transform: translateX(-200vw); }
+    49.98% { transform: translateX(-300vw); }
+    66.64% { transform: translateX(-400vw); }
+    83.3% { transform: translateX(-500vw); }
+    100% { transform: translateX(0); }
 }
