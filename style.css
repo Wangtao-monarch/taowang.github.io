@@ -39,9 +39,10 @@ body {
 .photo-wall {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 四列布局 */
+    grid-template-rows: repeat(3, 1fr); /* 三行布局 */
     gap: 10px;
     padding: 60px 10px 10px;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 70px); /* 填满一页 */
     overflow: hidden;
 }
 
@@ -50,8 +51,8 @@ body {
     height: 100%;
     overflow: hidden;
     position: relative;
-    animation: slideIn 2s ease forwards;
     opacity: 0; /* 初始透明度为 0 */
+    animation: slideIn 0.8s ease forwards; /* 平移动画 */
 }
 
 .photo:nth-child(1) { animation-delay: 0.1s; }
@@ -71,6 +72,11 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.photo img:hover {
+    transform: scale(1.05); /* 放大效果 */
 }
 
 /* Slide-in animation */
