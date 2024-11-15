@@ -45,16 +45,32 @@ body {
 .photo-wall {
     display: flex;
     overflow: hidden;
-    white-space: nowrap;
-    gap: 10px;
-    animation: scroll 30s linear infinite;
+    width: 300px; /* Fixed width to show one image */
+    height: 300px; /* Fixed height to show one image */
+    margin: 20px auto;
 }
 
-.photo {
-    min-width: 300px; /* Fixed width for each photo */
-    height: 300px; /* Fixed height for each photo */
-    overflow: hidden;
-    flex-shrink: 0; /* Prevents items from shrinking */
+.photo-wall .photo {
+    min-width: 100%; /* Full width of container */
+    transition: transform 0.5s ease; /* Smooth transition */
+    animation: scroll 36s infinite; /* Adjust duration for slower/faster scroll */
+}
+
+/* Keyframes for sliding each image one by one */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    8.33% { transform: translateX(-100%); }
+    16.66% { transform: translateX(-200%); }
+    25% { transform: translateX(-300%); }
+    33.33% { transform: translateX(-400%); }
+    41.66% { transform: translateX(-500%); }
+    50% { transform: translateX(-600%); }
+    58.33% { transform: translateX(-700%); }
+    66.66% { transform: translateX(-800%); }
+    75% { transform: translateX(-900%); }
+    83.33% { transform: translateX(-1000%); }
+    91.66% { transform: translateX(-1100%); }
+    100% { transform: translateX(-1200%); }
 }
 
 .photo img {
@@ -63,14 +79,4 @@ body {
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Animation for scrolling */
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
 }
