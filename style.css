@@ -37,16 +37,18 @@ body {
     overflow: hidden;
     width: 100vw;
     height: 100vh;
+    position: relative;
 }
 
-.photo-wall .photo {
-    min-width: 100vw; /* 每次显示一张图片的宽度 */
+.photo {
+    min-width: 100vw; /* 每次只显示一张图片的宽度 */
     height: 100vh;
-    transition: transform 1s ease; /* 切换效果 */
-}
-
-.photo-wall {
-    animation: scrollPhotos 36s infinite linear;
+    flex-shrink: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease;
 }
 
 .photo img {
@@ -55,13 +57,15 @@ body {
     object-fit: cover;
 }
 
-/* Animation to move photos */
-@keyframes scrollPhotos {
-    0% { transform: translateX(0); }
-    16.66% { transform: translateX(-100vw); }
-    33.32% { transform: translateX(-200vw); }
-    49.98% { transform: translateX(-300vw); }
-    66.64% { transform: translateX(-400vw); }
-    83.3% { transform: translateX(-500vw); }
-    100% { transform: translateX(0); }
+/* 定义图片切换动画 */
+@keyframes slideShow {
+    0%, 14% { opacity: 1; }
+    16%, 100% { opacity: 0; }
 }
+
+.photo:nth-child(1) { animation: slideShow 36s infinite 0s; }
+.photo:nth-child(2) { animation: slideShow 36s infinite 6s; }
+.photo:nth-child(3) { animation: slideShow 36s infinite 12s; }
+.photo:nth-child(4) { animation: slideShow 36s infinite 18s; }
+.photo:nth-child(5) { animation: slideShow 36s infinite 24s; }
+.photo:nth-child(6) { animation: slideShow 36s infinite 30s; }
