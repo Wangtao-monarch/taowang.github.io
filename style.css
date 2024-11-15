@@ -46,7 +46,7 @@ body {
 }
 
 .photo {
-    width: 100%;
+    width: 90%;
     aspect-ratio: 1; /* Ensures square aspect ratio */
     overflow: hidden;
     background-color: #f0f0f0; /* Background color for empty space */
