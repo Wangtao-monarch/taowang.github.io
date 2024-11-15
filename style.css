@@ -42,12 +42,11 @@ body {
     gap: 10px;
     padding-top: 60px;
     justify-content: center;
-    height: calc(100vh - 70px); /* Fill one page height */
-    overflow: hidden;
+    overflow: hidden; /* Remove height limit to allow for all photos */
 }
 
 .photo {
-    width: 21%; /* 调整每张照片的宽度，稍微缩小 */
+    width: 21%; /* 控制每张照片的宽度 */
     margin-bottom: 10px;
     opacity: 0;
     animation: fadeIn 1s ease forwards;
