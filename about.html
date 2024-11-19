@@ -6,6 +6,58 @@
     <title>About</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-image: url('jkl.jpeg'); 
+            background-size: cover;
+            background-position: center;
+            color: #fff; 
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .scrolling-text {
+            margin-top: 20px;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 80%;
+            text-align: center;
+        }
+
+        .scrolling-text p {
+            display: inline-block;
+            padding-left: 100%;
+            animation: scrollText 15s linear infinite;
+            font-size: 1.2em;
+        }
+
+        @keyframes scrollText {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="navbar">
@@ -21,9 +73,11 @@
         <a href="blog.html"><i class="fas fa-blog"></i> Blog</a>
     </div>
     <div class="container">
-        <h2>Welcome to My Website</h2>
-        <p>This is the homepage.</p>
-        <img src="jkl.jpeg" alt="Your Headshot" style="width:150px; border-radius: 50%; margin-bottom: 15px;">
+        <h2>About Me</h2>
+        <img src="jkl.jpeg" alt="Your Headshot">
+        <div class="scrolling-text">
+            <p>Hello, Welcome to my channel!.</p>
+        </div>
     </div>
 </body>
 </html>
