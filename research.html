@@ -6,6 +6,118 @@
     <title>Research</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .navbar a:hover {
+            color: #ffeb3b;
+        }
+
+        .container {
+            margin-top: 100px;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .container h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .container p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #555;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        .research-card {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .card p {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .card a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #2575fc;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .card a:hover {
+            background-color: #6a11cb;
+        }
+    </style>
 </head>
 <body>
     <div class="navbar">
@@ -18,7 +130,24 @@
     </div>
     <div class="container">
         <h2>Research</h2>
-        <p>Information about your current research project, including goals, outcomes, and any publications or results.</p>
+        <p>Explore my current research projects, goals, outcomes, and publications below.</p>
+        <div class="research-card">
+            <div class="card">
+                <h3>Project A</h3>
+                <p>Details about research project A, focusing on AI and machine learning advancements.</p>
+                <a href="project-a.html">Read More</a>
+            </div>
+            <div class="card">
+                <h3>Project B</h3>
+                <p>Details about research project B, with an emphasis on NLP and language models.</p>
+                <a href="project-b.html">Read More</a>
+            </div>
+            <div class="card">
+                <h3>Publications</h3>
+                <p>Access my latest research publications and papers in peer-reviewed journals.</p>
+                <a href="publications.html">View Publications</a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
