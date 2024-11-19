@@ -41,13 +41,15 @@
             width: 100%;
             text-align: center;
             position: relative;
+            max-width: 100vw;
         }
 
         .scrolling-text p {
             position: absolute;
-            width: max-content;
-            animation: scrollText 6s linear infinite;
-            font-size: 3em;
+            display: inline-block;
+            white-space: nowrap;
+            animation: scrollText 10s linear infinite;
+            font-size: 2em;
             font-family: 'Dancing Script', cursive;
             color: #ffeb3b;
         }
