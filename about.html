@@ -40,11 +40,12 @@
             overflow: hidden;
             width: 100%;
             text-align: center;
+            position: relative;
         }
 
         .scrolling-text p {
-            display: inline-block;
-            padding-left: 50%;
+            position: absolute;
+            width: max-content;
             animation: scrollText 6s linear infinite;
             font-size: 3em;
             font-family: 'Dancing Script', cursive;
@@ -53,10 +54,10 @@
 
         @keyframes scrollText {
             0% {
-                transform: translateX(0);
+                transform: translateX(100%);
             }
             100% {
-                transform: translateX(-50%);
+                transform: translateX(-100%);
             }
         }
     </style>
