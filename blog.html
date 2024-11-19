@@ -6,7 +6,90 @@
     <title>Blog</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
 
+        .container {
+            margin-top: 100px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .container p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #555;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        .blog-card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .blog-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: left;
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .blog-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .blog-card p {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .blog-card a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #2575fc;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .blog-card a:hover {
+            background-color: #6a11cb;
+        }
+    </style>
 </head>
 <body>
     <div class="navbar">
@@ -19,8 +102,24 @@
     </div>
     <div class="container">
         <h2>Blog</h2>
-        <p>Latest articles from my blog. Connect with Medium or another blogging platform if desired.</p>
+        <p>Explore my latest articles and connect with my thoughts on various topics below.</p>
+        <div class="blog-card-container">
+            <div class="blog-card">
+                <h3>Understanding NLP Models</h3>
+                <p>An in-depth analysis of natural language processing models and their applications.</p>
+                <a href="blog-post1.html">Read More</a>
+            </div>
+            <div class="blog-card">
+                <h3>AI in Modern Education</h3>
+                <p>How artificial intelligence is transforming education and learning methods.</p>
+                <a href="blog-post2.html">Read More</a>
+            </div>
+            <div class="blog-card">
+                <h3>The Future of Machine Learning</h3>
+                <p>Exploring emerging trends and advancements in the field of machine learning.</p>
+                <a href="blog-post3.html">Read More</a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
-
