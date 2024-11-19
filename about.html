@@ -37,19 +37,12 @@
         .scrolling-text {
             margin-top: 20px;
             text-align: center;
-            height: 2em; /* 确保高度固定 */
+            height: 2em; /* 确保高度固定，不会因文字长度变化 */
             font-size: 2em; /* 字体大小 */
             font-family: 'Dancing Script', cursive;
             color: #ffeb3b;
             position: relative;
             overflow: hidden;
-
-            /* 添加框样式 */
-            border: 2px solid #ffeb3b; /* 边框颜色 */
-            border-radius: 10px; /* 圆角边框 */
-            padding: 10px; /* 内边距 */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影效果 */
-            background-color: rgba(0, 0, 0, 0.6); /* 半透明背景 */
         }
 
         .scrolling-text p {
@@ -72,21 +65,11 @@
         }
 
         @keyframes fadeText {
-            0% {
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            30% {
-                opacity: 1;
-            }
-            40% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 0;
-            }
+            0% { opacity: 0; }
+            10% { opacity: 1; }
+            30% { opacity: 1; }
+            40% { opacity: 0; }
+            100% { opacity: 0; }
         }
     </style>
 </head>
