@@ -36,40 +36,28 @@
 
         .scrolling-text {
             margin-top: 20px;
-            text-align: center;
-            height: 2em; /* 确保高度固定，不会因文字长度变化 */
-            font-size: 2em; /* 字体大小 */
-            font-family: 'Dancing Script', cursive;
-            color: #ffeb3b;
-            position: relative;
+            white-space: nowrap;
             overflow: hidden;
+            width: 100%;
+            text-align: center;
         }
 
         .scrolling-text p {
-            position: absolute;
-            width: 100%;
-            opacity: 0;
-            animation: fadeText 12s infinite; /* 切换动画 */
+            display: inline-block;
+            padding-left: 50%;
+            animation: scrollText 15s linear infinite;
+            font-size: 3em;
+            font-family: 'Dancing Script', cursive;
+            color: #ffeb3b;
         }
 
-        .scrolling-text p:nth-child(1) {
-            animation-delay: 0s;
-        }
-
-        .scrolling-text p:nth-child(2) {
-            animation-delay: 4s;
-        }
-
-        .scrolling-text p:nth-child(3) {
-            animation-delay: 8s;
-        }
-
-        @keyframes fadeText {
-            0% { opacity: 0; }
-            10% { opacity: 1; }
-            30% { opacity: 1; }
-            40% { opacity: 0; }
-            100% { opacity: 0; }
+        @keyframes scrollText {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
         }
     </style>
 </head>
@@ -87,11 +75,9 @@
         <a href="blog.html"><i class="fas fa-blog"></i> Blog</a>
     </div>
     <div class="container">
-        <h2>About Me</h2>
         <img src="jkl.jpeg" alt="Your Headshot">
         <div class="scrolling-text">
             <p>Hello, Welcome to my channel!</p>
-            <p>I love coding and designing!</p>
             <p>Thanks for visiting my website!</p>
         </div>
     </div>
